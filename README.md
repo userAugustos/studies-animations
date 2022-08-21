@@ -1,0 +1,1 @@
+3 tipos de animações: Funcional, material, encantador
