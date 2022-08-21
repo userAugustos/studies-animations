@@ -1,0 +1,58 @@
+body {
+	/* padding: 1rem; */
+	height: 100vh;
+	background-color: aliceblue;
+	box-sizing: border-box;
+}
+
+.c-plane {
+	background: url('https://cdn-icons-png.flaticon.com/512/3696/3696600.png') no-repeat center;
+	background-size: contain;
+	height: 14rem;
+	width: 200px;
+	position: absolute;
+	top: 40%;
+
+	/* Animation: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations*/
+	/* animation-name: fly; */
+	/* animation-duration: 2s; */
+	/* animation-timing-function: ease-in-out; */
+	/* animation-delay: 2s;
+	/* animation-iteration-count: 2; */
+	/* animation-direction: reverse;  */
+	/* animation-fill-mode: forwards; */
+	/* animation-play-state: paused; */
+
+	/* So we can use all properties in one, and the order is the same that we used above */
+	animation: fly 2s ease-in-out 0.5s 3;
+}
+
+@keyframes fly { 
+	from { /* so here 'from' is a key to 0%*/
+		transform: translate(0, 0);
+	}
+
+	15% {
+		transform: translate(100%, -30%);
+	}
+
+	30% {
+		transform: translate(200%, 10%);
+	}
+
+	45% {
+		transform: translate(300%, -30%);
+	}
+
+	60% {
+		transform: translate(400%, 10%);
+	}
+
+	80% {
+		transform: translate(500%, -30%);
+	}
+
+	to { /*and to is for 100%*/
+		transform: translate(calc(100vw - 200px), 0);
+	}
+}
