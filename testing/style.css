@@ -1,0 +1,48 @@
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	padding: 1rem;
+}
+
+.transform_box {
+	outline: 5px solid green;
+}
+
+.transform_box img {
+	/* Transform: different from margin, transform doesn't alter the flow of element */
+	/* All transform functions will be used, passing directly all params, 
+	like in case of translate (X,Y) and in case of rotate, *deg*... Se the docs linked*/
+
+	/* translate: https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-function/translate */
+	transform: translate(3rem, 3rem) 
+
+	/* scale: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale */
+	scale(0.5)
+	
+	/* rotate: https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-function/rotate */
+	rotate(3deg)
+
+	/* skew:  https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew*/
+	skew(1deg, 0.2deg); 
+}
+
+.transition_box {
+	background-color: rgb(134, 159, 243);
+	height: 300px;
+	width: 300px;
+
+	/* transition: https://developer.mozilla.org/en-US/docs/Web/CSS/transition */
+	transition-property: background-color, border-radius; /* this set what property will receive the transition */
+	transition-duration: 1s;
+	transition-delay: 0.2s; /* this set the delay between the action and the animation*/
+
+	/* This it's really important, so: https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function */
+	transition-timing-function: cubic-bezier(.15, .89, .85, .26); /* so, here is the thing, we can define, our own animation rules*/
+	
+}
+
+.transition_box:hover {
+	background-color: rgb(241, 168, 71);
+	border-radius: 50%;
+}
