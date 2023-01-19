@@ -9,9 +9,10 @@ body {
 	background: url('https://cdn-icons-png.flaticon.com/512/3696/3696600.png') no-repeat center;
 	background-size: contain;
 	height: 14rem;
-	width: 200px;
+	width: 15rem;
 	position: absolute;
-	top: 40%;
+	/* top: 40%; */
+	bottom: 0;
 
 	/* Animation: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations*/
 	/* animation-name: fly; */
@@ -24,35 +25,19 @@ body {
 	/* animation-play-state: paused; */
 
 	/* So we can use all properties in one, and the order is the same that we used above */
-	animation: fly 2s ease-in-out 0.5s 3;
+	animation: fly 3s ease-in-out 0.5s;
 }
 
 @keyframes fly { 
-	from { /* so here 'from' is a key to 0%*/
-		transform: translate(0, 0);
+	0% {
+		/* transform: rotate(-5deg); */
 	}
 
-	15% {
-		transform: translate(100%, -30%);
+	40% {
+		transform: rotate(-30deg) translate(calc(100vw - 7.5rem), 7rem); /* this is something to study, wwe can't pass the X=calc, with a Y=0, if we do, the animation will end before the end of the screen*/
 	}
 
-	30% {
-		transform: translate(200%, 10%);
-	}
-
-	45% {
-		transform: translate(300%, -30%);
-	}
-
-	60% {
-		transform: translate(400%, 10%);
-	}
-
-	80% {
-		transform: translate(500%, -30%);
-	}
-
-	to { /*and to is for 100%*/
-		transform: translate(calc(100vw - 200px), 0);
+	100% {
+		transform: rotate(-50deg) translate(-25vw, 180vh);
 	}
 }
