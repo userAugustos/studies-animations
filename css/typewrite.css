@@ -1,0 +1,17 @@
+/* so here, what really set up the animation is the overflow and width initial to 0 */
+.container {
+    display: inline-block;
+}
+
+.typed {
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    border-right: .15em solid #23d5ab;
+    animation: typing 1s steps(30, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
