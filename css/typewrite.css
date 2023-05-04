@@ -8,7 +8,28 @@
     width: 0;
     white-space: nowrap;
     border-right: .15em solid #23d5ab;
-    animation: typing 1s steps(30, end) forwards;
+    animation:
+            typing 1s steps(30, end) forwards,
+            blinker-border .7s step-end infinite;
+}
+
+span.blinker {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker-border {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #23d5ab;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes typing {
